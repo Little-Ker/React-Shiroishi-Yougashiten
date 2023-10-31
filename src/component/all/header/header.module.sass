@@ -1,0 +1,65 @@
+
+@use '../../../styles/variable' as v
+
+.header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 3.5rem 5vw
+  position: fixed
+  z-index: 999
+  top: 0
+  width: 100%
+  .button
+    width: 320px
+    height: 55px
+    border: 1px solid v.$main-color
+    border-radius: 40px
+    padding: .8rem 0
+    display: flex
+    align-items: center
+    font-size: 14px
+    color: v.$main-light-color
+    overflow: hidden
+    transition: .3s all
+    position: relative
+    .textList
+      width: 100%
+      position: absolute
+      transition: .3s all
+      transform: translateY(0)
+      .runText
+        display: flex
+        align-items: center
+        width: 100%
+        white-space: nowrap
+        position: absolute
+        top: 0
+        bottom: 0
+        animation: marquee 18s linear infinite
+        &.run1
+          animation-delay: -6s
+        &.run2
+          animation-delay: -12s
+        &.bottomRun1
+          animation-delay: -1s
+        &.bottomRun2
+          animation-delay: -7s
+        &.bottomRun3
+          animation-delay: -13s
+      span
+        margin: 0 .3rem
+      &.bottomText
+        bottom: -30px
+    .arr
+      width: 1.2rem
+      transform: rotate(-45deg)
+      margin-top: 5px
+    &:hover .textList
+      transform: translateY(-55px)
+
+@keyframes marquee
+  0%
+    transform: translateX(-100%)
+  100%
+    transform: translateX(100%)
