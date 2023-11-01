@@ -11,8 +11,8 @@ function Arrow(props) {
 }
 
 Arrow.propTypes = {
-  strokeColor: '',
-  className: '',
+  strokeColor: PropTypes.string,
+  className: PropTypes.string,
 }
 
 Arrow.defaultProps = {

@@ -1,5 +1,5 @@
 import React, {
-  useCallback
+  useCallback, useRef, useState, useEffect
 } from 'react'
 import clsx from 'clsx'
 import {
@@ -15,6 +15,13 @@ import aboutMask from 'assets/image/mainView/about/about_mask.png'
 import hand from 'assets/image/mainView/about/hand.png'
 
 function About() {
+  const triggerRef = useRef(null)
+  const [trigger, setTrigger] = useState(triggerRef.current)
+
+  useEffect(() => {
+    setTrigger(triggerRef.current)
+  }, [])
+
   const test = useCallback(() => {
     console.log('aaaaaaaa')
   }, [])
@@ -25,6 +32,7 @@ function About() {
         <Scene
           triggerHook={0.7}
           duration={1000}
+          triggerElement={trigger}
         >
           {progress => (
             <Tween
@@ -39,10 +47,10 @@ function About() {
             >
               <div className={clsx(styles.aboutBg, styles.mask)} style={{
                 backgroundImage: `url(${aboutBg})`,
-                webkitMaskImage: `url(${aboutMask})`,
+                WebkitMaskImage: `url(${aboutMask})`,
               }}>
                 <div className={styles.text}>
-                  TestTestTestTestTestTestTestTestTestTest
+                  Test Test Test Test Test Test Test Test Test Test
                 </div>
               </div>
             </Tween>    
@@ -53,6 +61,7 @@ function About() {
         <Scene
           triggerHook={0.7}
           duration={1000}
+          triggerElement={trigger}
         >
           {progress => (
             <Tween

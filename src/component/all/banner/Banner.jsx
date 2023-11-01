@@ -92,7 +92,7 @@ function Banner() {
     <div className={styles.banner} style={{backgroundImage: `url(${bg})`} }>
       <div className={styles.clouds}>
         {clouds.map(cur => (
-          <MouseParallax key={cur} enableOnTouchDevice isAbsolutelyPositioned lerpEase={0.01} strength={cur.strength}>
+          <MouseParallax key={cur.img} enableOnTouchDevice isAbsolutelyPositioned lerpEase={0.01} strength={cur.strength}>
             <div className={styles.cloudBg} style={cur.pos}>
               <img className={styles.cloud} src={cur.img} alt="" />
             </div>
