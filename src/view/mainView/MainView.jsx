@@ -4,6 +4,7 @@ import React, {
 import PropTypes from 'prop-types'
 import Header from 'component/all/header'
 import Banner from 'component/all/banner'
+import About from 'component/all/about'
 
 
 
@@ -13,6 +14,7 @@ function MainView(props) {
     <div>
       <Header />
       <Banner />
+      <About />
     </div>
   )
 }

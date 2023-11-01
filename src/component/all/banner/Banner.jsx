@@ -1,10 +1,6 @@
 import React, {
-  useEffect,
-  useState
+  useEffect
 } from 'react'
-import clsx from 'clsx'
-import Logo from 'component/svg/logo'
-import Arrow from 'component/svg/arrow'
 import {
   MouseParallax 
 } from 'react-just-parallax'
