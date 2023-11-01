@@ -3,6 +3,7 @@ import React, {
 } from 'react'
 import PropTypes from 'prop-types'
 import Header from 'component/all/header'
+import Banner from 'component/all/banner'
 
 
 
@@ -11,6 +12,7 @@ function MainView(props) {
   return (
     <div>
       <Header />
+      <Banner />
     </div>
   )
 }
