@@ -8,6 +8,7 @@ import {
 import {
   Controller, Scene 
 } from 'react-scrollmagic'
+import AboutMoveText from 'component/svg/aboutMoveText'
 import styles from './about.module.sass'
 
 import aboutBg from 'assets/image/mainView/about/about_gallery_item_1.png'
@@ -43,15 +44,13 @@ function About() {
               }}
               totalProgress={progress}
               paused
-              onComplete={test}
+              // onComplete={test}
             >
               <div className={clsx(styles.aboutBg, styles.mask)} style={{
                 backgroundImage: `url(${aboutBg})`,
                 WebkitMaskImage: `url(${aboutMask})`,
               }}>
-                <div className={styles.text}>
-                  Test Test Test Test Test Test Test Test Test Test
-                </div>
+                <AboutMoveText />
               </div>
             </Tween>    
           )}
@@ -71,7 +70,7 @@ function About() {
               }}
               totalProgress={progress}
               paused
-              onComplete={test}
+
             >
               <img className={styles.hand} src={hand} alt="" />
             </Tween>    
