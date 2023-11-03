@@ -1,6 +1,7 @@
 @use '../../../styles/main' as main
 
 .about
+  position: relative
   .aboutBg
     width: 100%
     height: 100vh
@@ -12,14 +13,34 @@
     z-index: 1
     &.mask
       -webkit-mask-position-x: center
-      -webkit-mask-position-y: -100vh
+      -webkit-mask-position-y: -120vh
       -webkit-mask-size: 100%
       -webkit-mask-repeat: no-repeat
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100vh
+      background: rgba(#000, 0.4)
   .hand
     position: fixed
     z-index: 2
     right: -15.5vw
-    top: -100vh
+    top: -130vh
     width: 65vw
     transform-origin: bottom left
     transform: rotate(-35deg)
+  .aboutMoveText
+    margin-top: 250px
+    position: fixed
+    width: 100%
+    z-index: 2
+  .text
+    font-size: 64px
+    position: relative
+    z-index: 22
+    top: 0
+    padding-top: 1500px
+    color: #fff

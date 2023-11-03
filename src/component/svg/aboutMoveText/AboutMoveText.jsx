@@ -1,5 +1,5 @@
 import React, {
-  useCallback, useEffect, useMemo, useRef, useState
+  useCallback, useEffect, useRef
 } from 'react'
 
 function AboutMoveText() {
@@ -8,7 +8,7 @@ function AboutMoveText() {
   const handleNavigation = useCallback(
     (e) => {
       const window = e.currentTarget
-      console.log('posY.current',posY.current)
+      // console.log('posY.current',posY.current)
       posY.current = window.scrollY
     }, [])
 
@@ -26,7 +26,7 @@ function AboutMoveText() {
         fill: '#fff',
         fontSize: '64px',
       }}>
-        <textPath href="#stroke" id="strokeOnPath" startOffset={ -((posY.current) + 600) }>
+        <textPath href="#stroke" id="strokeOnPath" startOffset={ -(posY.current) }>
           ABOUT IMMERSIVE PATISSERIE	&nbsp;	&nbsp;	&nbsp;
           ABOUT IMMERSIVE PATISSERIE	&nbsp;	&nbsp;	&nbsp;
           ABOUT IMMERSIVE PATISSERIE	&nbsp;	&nbsp;	&nbsp;
