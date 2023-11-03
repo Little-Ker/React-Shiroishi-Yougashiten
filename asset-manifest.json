@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React-Shiroishi-Yougashiten/static/css/main.0e68c75b.css",
-    "main.js": "/React-Shiroishi-Yougashiten/static/js/main.1979cefe.js",
+    "main.css": "/React-Shiroishi-Yougashiten/static/css/main.af0dc75e.css",
+    "main.js": "/React-Shiroishi-Yougashiten/static/js/main.0a68a94c.js",
     "static/js/787.7efd31bd.chunk.js": "/React-Shiroishi-Yougashiten/static/js/787.7efd31bd.chunk.js",
     "static/media/first_ground.png": "/React-Shiroishi-Yougashiten/static/media/first_ground.1f50d87641309dd902e2.png",
     "static/media/about_gallery_item_1.png": "/React-Shiroishi-Yougashiten/static/media/about_gallery_item_1.ea43e3874543124465c9.png",
@@ -20,12 +20,12 @@
     "static/media/about_mask.png": "/React-Shiroishi-Yougashiten/static/media/about_mask.96e4578ab53e7717dd35.png",
     "static/media/first_cloud_1.png": "/React-Shiroishi-Yougashiten/static/media/first_cloud_1.c86f7d23d3dfa7963c0b.png",
     "index.html": "/React-Shiroishi-Yougashiten/index.html",
-    "main.0e68c75b.css.map": "/React-Shiroishi-Yougashiten/static/css/main.0e68c75b.css.map",
-    "main.1979cefe.js.map": "/React-Shiroishi-Yougashiten/static/js/main.1979cefe.js.map",
+    "main.af0dc75e.css.map": "/React-Shiroishi-Yougashiten/static/css/main.af0dc75e.css.map",
+    "main.0a68a94c.js.map": "/React-Shiroishi-Yougashiten/static/js/main.0a68a94c.js.map",
     "787.7efd31bd.chunk.js.map": "/React-Shiroishi-Yougashiten/static/js/787.7efd31bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e68c75b.css",
-    "static/js/main.1979cefe.js"
+    "static/css/main.af0dc75e.css",
+    "static/js/main.0a68a94c.js"
   ]
 }
