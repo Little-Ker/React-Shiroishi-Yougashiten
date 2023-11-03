@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/React-Shiroishi-Yougashiten/static/css/main.0e68c75b.css",
+    "main.js": "/React-Shiroishi-Yougashiten/static/js/main.c02906a4.js",
+    "static/js/787.7efd31bd.chunk.js": "/React-Shiroishi-Yougashiten/static/js/787.7efd31bd.chunk.js",
+    "static/media/first_ground.png": "/React-Shiroishi-Yougashiten/static/media/first_ground.1f50d87641309dd902e2.png",
+    "static/media/about_gallery_item_1.png": "/React-Shiroishi-Yougashiten/static/media/about_gallery_item_1.ea43e3874543124465c9.png",
+    "static/media/hand.png": "/React-Shiroishi-Yougashiten/static/media/hand.d49a854458b79201bb56.png",
+    "static/media/first_tree_front_right.png": "/React-Shiroishi-Yougashiten/static/media/first_tree_front_right.35f2f642aaad6d73969d.png",
+    "static/media/first_store.png": "/React-Shiroishi-Yougashiten/static/media/first_store.30d49833e3f516adaae8.png",
+    "static/media/first_tree_front_left.png": "/React-Shiroishi-Yougashiten/static/media/first_tree_front_left.721c22cd389219e671ca.png",
+    "static/media/first_tree_back_right.png": "/React-Shiroishi-Yougashiten/static/media/first_tree_back_right.cd8d746226d8c3198666.png",
+    "static/media/first_tree_back_left.png": "/React-Shiroishi-Yougashiten/static/media/first_tree_back_left.248d482cc4ce9b01ca6c.png",
+    "static/media/first_car.png": "/React-Shiroishi-Yougashiten/static/media/first_car.08589ebff9781d3cce30.png",
+    "static/media/first_cloud_2.png": "/React-Shiroishi-Yougashiten/static/media/first_cloud_2.5fd40832d2f0ce2e593c.png",
+    "static/media/noise.jpg": "/React-Shiroishi-Yougashiten/static/media/noise.ba48fce9b19e0adf09f2.jpg",
+    "static/media/first_cloud_4.png": "/React-Shiroishi-Yougashiten/static/media/first_cloud_4.522517c3563a007ff4d7.png",
+    "static/media/first_cloud_3.png": "/React-Shiroishi-Yougashiten/static/media/first_cloud_3.87403ad46315e3eda97a.png",
+    "static/media/first_title.svg": "/React-Shiroishi-Yougashiten/static/media/first_title.6976773e8ccde432f1da0300f13567f7.svg",
+    "static/media/about_mask.png": "/React-Shiroishi-Yougashiten/static/media/about_mask.96e4578ab53e7717dd35.png",
+    "static/media/first_cloud_1.png": "/React-Shiroishi-Yougashiten/static/media/first_cloud_1.c86f7d23d3dfa7963c0b.png",
+    "index.html": "/React-Shiroishi-Yougashiten/index.html",
+    "main.0e68c75b.css.map": "/React-Shiroishi-Yougashiten/static/css/main.0e68c75b.css.map",
+    "main.c02906a4.js.map": "/React-Shiroishi-Yougashiten/static/js/main.c02906a4.js.map",
+    "787.7efd31bd.chunk.js.map": "/React-Shiroishi-Yougashiten/static/js/787.7efd31bd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0e68c75b.css",
+    "static/js/main.c02906a4.js"
+  ]
+}
