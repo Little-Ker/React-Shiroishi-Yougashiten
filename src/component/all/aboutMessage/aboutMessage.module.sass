@@ -1,0 +1,40 @@
+@use '../../../styles/main' as main
+
+.aboutMessage
+  display: flex
+  font-size: 64px
+  position: relative
+  z-index: 22
+  top: 0
+  color: #fff
+  width: 100%
+  padding: 0 4.5rem
+  padding-top: 1500px
+  //
+  .left
+    width: 55vw
+    padding: 0 4.5rem
+    text-align: left
+    min-height: 3000px
+    .title01
+      width: 450px
+      margin-left: 4rem
+    .splitLetters
+      margin-bottom: 3rem
+      display: inline-block
+      font-size: 36px
+      transform-origin: bottom center
+  .right
+    position: relative
+  .movie
+    position: sticky
+    top: 25%
+    height: 385px
+    width: 225px
+    width: 20vw
+    height: calc(20vw * 525 / 303.953)
+    border-radius: 10px
+    overflow: hidden
+    iframe
+      width: 100%
+      height: 100%

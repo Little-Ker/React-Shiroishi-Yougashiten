@@ -3,12 +3,13 @@ import React, {
 } from 'react'
 import clsx from 'clsx'
 import {
-  Tween, Timeline
+  Tween, Timeline, SplitLetters 
 } from 'react-gsap'
 import {
   Controller, Scene 
 } from 'react-scrollmagic'
 import AboutMoveText from 'component/svg/aboutMoveText'
+import AboutMessage from 'component/all/aboutMessage'
 import styles from './about.module.sass'
 
 import aboutBg from 'assets/image/mainView/about/about_gallery_item_1.png'
@@ -95,9 +96,10 @@ function About() {
           )}
         </Scene>
       </Controller>
-      <p className={styles.text}> 
-        {'TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST '}
-      </p>
+      <div className={styles.aboutMessage}>
+        <AboutMessage />
+      </div>
+      
     </div>
   )
 }
