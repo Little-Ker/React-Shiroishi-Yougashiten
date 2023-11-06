@@ -96,9 +96,9 @@ function About() {
           )}
         </Scene>
       </Controller>
-      <div className={styles.aboutMessage}>
-        <AboutMessage />
-      </div>
+      {/* <div className={styles.aboutMessage}> */}
+      <AboutMessage />
+      {/* </div> */}
       
     </div>
   )

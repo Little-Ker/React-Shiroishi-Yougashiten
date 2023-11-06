@@ -1,40 +1,33 @@
 import React, {
-  useCallback, useRef, useState, useEffect, useMemo
+  useCallback, useMemo
 } from 'react'
-import clsx from 'clsx'
 import {
   Tween, Timeline, SplitLetters, SplitWords
 } from 'react-gsap'
 import {
   Controller, Scene 
 } from 'react-scrollmagic'
-import AboutMoveText from 'component/svg/aboutMoveText'
 import styles from './aboutMessage.module.sass'
 
 import title01 from 'assets/image/mainView/about/about_gallery_title.png'
-import aboutMask from 'assets/image/mainView/about/about_mask.png'
-import hand from 'assets/image/mainView/about/hand.png'
 
 function AboutMessage() {
-  const triggerRef = useRef(null)
-  const [trigger, setTrigger] = useState(triggerRef.current)
-
   const preTextList = useMemo(() => [{
     text: 'ひとくち、',
-    marginLeft: '6rem',
+    marginLeft: '10rem',
   }, {
     text: 'ふたくち、',
-    marginLeft: '9.5rem',
+    marginLeft: '13.5rem',
   }, {
     text: '夢うつつ',
-    marginLeft: '16rem',
+    marginLeft: '20rem',
   }, {
     text: 'ここは',
-    marginLeft: '16rem',
+    marginLeft: '20rem',
   }], [])
 
   const sentenceList = useMemo(() => [{
-    text: '「架空のパティスリー しろいし洋菓子店」は、',
+    text: '「架空のパティスリーしろいし洋菓子店」は、',
     marginBottom: '2rem',
   }, {
     text: '作り手であるわたしたちが、',
@@ -53,32 +46,9 @@ function AboutMessage() {
     marginBottom: '2rem',
   }], [])
 
-  useEffect(() => {
-    setTrigger(triggerRef.current)
-  }, [])
-
   const onComplete = useCallback(() => {
     console.log('Complete')
   }, [])
-
-  const showTextAnim = useCallback((text) => {
-    return (
-      <Tween
-        from={{
-          opacity: 0,
-          scale: 0.1,
-          bottom: -1,
-        }}
-        stagger={0.15}
-      >
-        <SplitLetters
-          wrapper={<div className={styles.splitLetters} />}
-        >
-          {text}
-        </SplitLetters>
-      </Tween>
-    )}
-  , [])
 
   return (
     <div className={styles.aboutMessage}>
@@ -93,7 +63,20 @@ function AboutMessage() {
               {preTextList.map((cur) => {
                 return (
                   <div key={cur} style={{marginLeft: cur.marginLeft}}>
-                    {showTextAnim(cur.text)}
+                    <Tween
+                      from={{
+                        opacity: 0,
+                        scale: 0.1,
+                        bottom: -1,
+                      }}
+                      stagger={0.15}
+                    >
+                      <SplitLetters
+                        wrapper={<div className={styles.splitLetters} />}
+                      >
+                        {cur.text}
+                      </SplitLetters>
+                    </Tween>
                   </div>)
               })}
             </Timeline>
@@ -118,18 +101,29 @@ function AboutMessage() {
           <div style={{ marginTop: '16rem' }} />
           <Scene
             pin={false}
-            duration={600}
-            offset={-400}        
+            duration={800}
+            offset={-300}        
           >
             <Timeline paused>
-              <Tween
-                from={{
-                  opacity: 0,
-                  scale: 0.7,
-                }}
-              >
-                <img src={title01} className={styles.title01} alt="" />
-              </Tween>
+              {sentenceList.map((cur) => {
+                return (
+                  <div key={cur} style={{marginBottom: cur.marginBottom}}>
+                    <Tween
+                      from={{
+                        opacity: 0,
+                        transform: 'rotate(7deg)',
+                        scale: 0.7,
+                      }}
+                      stagger={0.15}
+                    >
+                      <SplitWords
+                        wrapper={<div className={styles.sentence} />}
+                      >
+                        {cur.text}
+                      </SplitWords>
+                    </Tween>
+                  </div>)
+              })}
             </Timeline>
           </Scene>
         </Controller>
