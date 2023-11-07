@@ -1,5 +1,5 @@
 import React, {
-  useEffect
+  useEffect, useState
 } from 'react'
 import {
   MouseParallax 
@@ -8,6 +8,10 @@ import gsap from 'gsap'
 import {
   TweenMax 
 } from 'gsap/all'
+import {
+  useSelector 
+} from 'react-redux'
+import clsx from 'clsx'
 import styles from './banner.module.sass'
 
 import bg from 'assets/image/mainView/banner/noise.jpg'
@@ -25,6 +29,13 @@ import leftFrontTree from 'assets/image/mainView/banner/first_tree_front_left.pn
 import rightFrontTree from 'assets/image/mainView/banner/first_tree_front_right.png'
 
 function Banner() {
+  const [isShowBanner, setIsShowBanner] = useState(true)
+  const isShow = useSelector(state => state.showBanner.isShow)
+
+  useEffect(() => {
+    setIsShowBanner(isShow)
+  }, [isShow])
+
   const clouds = [{
     img: cloud1,
     pos: {
@@ -89,7 +100,7 @@ function Banner() {
   }, [])
 
   return (
-    <div className={styles.banner} style={{backgroundImage: `url(${bg})`} }>
+    <div className={clsx(styles.banner, !isShowBanner && styles.showNone)} style={{backgroundImage: `url(${bg})`} }>
       <div className={styles.clouds}>
         {clouds.map(cur => (
           <MouseParallax key={cur.img} enableOnTouchDevice isAbsolutelyPositioned lerpEase={0.01} strength={cur.strength}>

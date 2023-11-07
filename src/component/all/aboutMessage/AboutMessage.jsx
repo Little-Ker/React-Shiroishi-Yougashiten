@@ -2,16 +2,24 @@ import React, {
   useCallback, useMemo
 } from 'react'
 import {
-  Tween, Timeline, SplitLetters, SplitWords 
+  Tween, Timeline, SplitChars , SplitWords 
 } from 'react-gsap'
 import {
   Controller, Scene 
 } from 'react-scrollmagic'
+import {
+  useDispatch 
+} from 'react-redux'
+import {
+  changeShowBanner
+} from 'redux/showBannerSlice'
 import styles from './aboutMessage.module.sass'
 
 import title01 from 'assets/image/mainView/about/about_gallery_title.png'
 
 function AboutMessage() {
+  const dispatch = useDispatch()
+
   const preTextList = useMemo(() => [{
     text: 'ひとくち、',
     marginLeft: '10rem',
@@ -47,7 +55,11 @@ function AboutMessage() {
   }], [])
 
   const onComplete = useCallback(() => {
-    console.log('Complete')
+    dispatch(changeShowBanner(false))
+  }, [])
+
+  const onEnterBack = useCallback(() => {
+    dispatch(changeShowBanner(true))
   }, [])
 
   return (
@@ -62,7 +74,7 @@ function AboutMessage() {
             <Timeline paused>
               {preTextList.map((cur) => {
                 return (
-                  <div key={cur} style={{marginLeft: cur.marginLeft}}>
+                  <div key={cur.text} style={{marginLeft: cur.marginLeft}}>
                     <Tween
                       from={{
                         opacity: 0,
@@ -71,11 +83,11 @@ function AboutMessage() {
                       }}
                       stagger={0.15}
                     >
-                      <SplitLetters
+                      <SplitChars 
                         wrapper={<div className={styles.splitLetters} />}
                       >
                         {cur.text}
-                      </SplitLetters>
+                      </SplitChars >
                     </Tween>
                   </div>)
               })}
@@ -103,18 +115,16 @@ function AboutMessage() {
             pin={false}
             duration={800}
             offset={-500} 
-            scrub={2}
           >
             <Timeline paused>
               {sentenceList.map((cur) => {
                 return (
-                  <div key={cur} style={{marginBottom: cur.marginBottom}}>
+                  <div key={cur.text} style={{marginBottom: cur.marginBottom}}>
                     <Tween
                       from={{
                         opacity: 0,
                         transform: 'rotate(7deg)',
                         scale: 0.7,
-                        scrub: 0.5,
                       }}
                       stagger={0.15}
                     >
@@ -129,7 +139,8 @@ function AboutMessage() {
             </Timeline>
           </Scene>
         </Controller>
-        <div id={'triggerMovie'}  style={{ marginTop: '50rem' }} />
+        <div id={'triggerMovie'} style={{ marginTop: '50rem' }} />
+        <div id={'triggerMovie2'} style={{ marginTop: '100rem' }} />
       </div>
       <div className={styles.right}>
         <Tween
@@ -142,6 +153,8 @@ function AboutMessage() {
               start: '-200px center',
               end: '200px center',
               scrub: 0.5,
+              onEnterBack: onEnterBack,
+              onLeave: onComplete,
             },
           }}
         >

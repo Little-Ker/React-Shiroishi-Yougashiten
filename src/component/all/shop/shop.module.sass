@@ -1,0 +1,44 @@
+@use '../../../styles/variable' as variable
+
+.shop
+  position: relative
+  width: 100%
+  height: 100vh
+  background: variable.$bg-color
+  position: fixed
+  z-index: 2
+  top: 0
+  left: 0
+  display: none
+  &.showShop
+    display: block
+  .shopBg
+    width: 100%
+    height: 100%
+    background-repeat: no-repeat
+    background-size: 100%
+    background-position: center
+    background-attachment: fixed
+    position: relative
+    .overlay
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100vh
+      background: rgba(#000, 0.4)
+    .welcomeText
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      .title, .subTitle
+        color: #fff
+      .title
+        font-size: 92px
+      .subTitle
+        font-size: 52px
+        margin-bottom: 1.5rem
+      img
+        width: 33vw

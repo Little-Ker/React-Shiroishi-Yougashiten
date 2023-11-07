@@ -1,9 +1,9 @@
 import React, {
-  useCallback, useRef, useState, useEffect
+  useRef, useState, useEffect
 } from 'react'
 import clsx from 'clsx'
 import {
-  Tween, Timeline, SplitLetters 
+  Tween, Timeline 
 } from 'react-gsap'
 import {
   Controller, Scene 
@@ -24,83 +24,84 @@ function About() {
     setTrigger(triggerRef.current)
   }, [])
 
-  const onComplete = useCallback(() => {
-    console.log('Complete')
-  }, [])
-
   return (
-    <div className={styles.about}>
-      <Controller>
-        <Scene
-          duration={1000}
-          triggerElement={trigger}
-        >
-          {progress => (
-            <Timeline totalProgress={progress} paused>
+    <Tween
+      duration={0.6}
+      to={{
+        opacity: 0,
+        scrollTrigger: {
+          trigger: '#triggerMovie2',
+          start: '-200px center',
+          end: '200px center',
+          scrub: 0.5,
+        },
+      }}
+    >
+      <div className={styles.about}>
+        <Controller>
+          <Scene
+            duration={1000}
+            triggerElement={trigger}
+          >
+            {progress => (
+              <Timeline totalProgress={progress} paused>
+                <Tween
+                  to={{
+                    webkitMaskPositionY: 0,
+                    webkitMaskSize: '250vw',
+                    backgroundSize: '100%',
+                  }}
+                >
+                  <div className={clsx(styles.aboutBg, styles.mask)} style={{
+                    backgroundImage: `url(${aboutBg})`,
+                    WebkitMaskImage: `url(${aboutMask})`,
+                  }}>
+                    <Timeline
+                      target={
+                        <div className={clsx(styles.aboutMoveText)}>
+                          <AboutMoveText />
+                        </div>
+                      }
+                      totalProgress={progress} 
+                      paused
+                    >
+                      <Tween
+                        from={{ marginTop: '250px' }}
+                        to={{ marginTop: '250px' }}
+                      />
+                      <Tween
+                        from={{ marginTop: '250px' }}
+                        to={{ marginTop: '-30%' }}
+                      />
+                    </Timeline>
+                  </div>
+                </Tween> 
+              </Timeline>  
+            )}
+          </Scene>
+        </Controller>
+        <Controller>
+          <Scene
+            duration={1000}
+            triggerElement={trigger}
+          >
+            {progress => (
               <Tween
                 to={{
-                  webkitMaskPositionY: 0,
-                  webkitMaskSize: '250vw',
-                  backgroundSize: '100%',
+                  top: '210vh',
+                  transform: 'rotate(50deg)',
                 }}
-                onComplete={onComplete}
-                onUpdate={
-                  console.log('progress',progress)
-                }
+                totalProgress={progress}
+                paused
               >
-                <div className={clsx(styles.aboutBg, styles.mask)} style={{
-                  backgroundImage: `url(${aboutBg})`,
-                  WebkitMaskImage: `url(${aboutMask})`,
-                }}>
-                  <Timeline
-                    target={
-                      <div className={clsx(styles.aboutMoveText)}>
-                        <AboutMoveText />
-                      </div>
-                    }
-                    totalProgress={progress} 
-                    paused
-                  >
-                    <Tween
-                      from={{ marginTop: '250px' }}
-                      to={{ marginTop: '250px' }}
-                    />
-                    <Tween
-                      from={{ marginTop: '250px' }}
-                      to={{ marginTop: '-30%' }}
-                    />
-                  </Timeline>
-                </div>
-              </Tween>  
-            </Timeline>  
-          )}
-        </Scene>
-      </Controller>
-      <Controller>
-        <Scene
-          duration={1000}
-          triggerElement={trigger}
-        >
-          {progress => (
-            <Tween
-              to={{
-                top: '210vh',
-                transform: 'rotate(50deg)',
-              }}
-              totalProgress={progress}
-              paused
-
-            >
-              <img className={styles.hand} src={hand} alt="" />
-            </Tween>    
-          )}
-        </Scene>
-      </Controller>
-      {/* <div className={styles.aboutMessage}> */}
-      <AboutMessage />
-      {/* </div> */}
-      
-    </div>
+                <img className={styles.hand} src={hand} alt="" />
+              </Tween>    
+            )}
+          </Scene>
+        </Controller>
+        <AboutMessage />
+      </div>
+    </Tween>
   )
 }
 
