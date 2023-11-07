@@ -2,7 +2,7 @@ import React, {
   useCallback, useMemo
 } from 'react'
 import {
-  Tween, Timeline, SplitLetters, SplitWords
+  Tween, Timeline, SplitLetters, SplitWords 
 } from 'react-gsap'
 import {
   Controller, Scene 
@@ -102,7 +102,8 @@ function AboutMessage() {
           <Scene
             pin={false}
             duration={800}
-            offset={-300}        
+            offset={-500} 
+            scrub={2}
           >
             <Timeline paused>
               {sentenceList.map((cur) => {
@@ -113,6 +114,7 @@ function AboutMessage() {
                         opacity: 0,
                         transform: 'rotate(7deg)',
                         scale: 0.7,
+                        scrub: 0.5,
                       }}
                       stagger={0.15}
                     >
@@ -127,12 +129,27 @@ function AboutMessage() {
             </Timeline>
           </Scene>
         </Controller>
+        <div id={'triggerMovie'}  style={{ marginTop: '50rem' }} />
       </div>
       <div className={styles.right}>
-        <div className={styles.movie}>
-          <iframe className="about__message__movie-iframe" src="https://player.vimeo.com/video/879369833?background=1&amp;badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" title="brand_for_BG">
-          </iframe>
-        </div>
+        <Tween
+          duration={0.6}
+          to={{
+            y: '-50px',
+            opacity: 0,
+            scrollTrigger: {
+              trigger: '#triggerMovie',
+              start: '-200px center',
+              end: '200px center',
+              scrub: 0.5,
+            },
+          }}
+        >
+          <div className={styles.movie}>
+            <iframe className="about__message__movie-iframe" src="https://player.vimeo.com/video/879369833?background=1&amp;badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" title="brand_for_BG">
+            </iframe>
+          </div>
+        </Tween>
       </div>
     </div>
   )
