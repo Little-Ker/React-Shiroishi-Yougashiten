@@ -13,7 +13,6 @@ const RouterPage = () => {
     <Routes>
       <Route exact path="/" element={<MainView/>} />
       <Route exact path="main" element={<MainView/>} />
-
       <Route path="*" element={<MainView/>} />
     </Routes>
   )
@@ -23,7 +22,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {/* <Navbar /> */}
         <RouterPage />
       </Router>
     </div>
