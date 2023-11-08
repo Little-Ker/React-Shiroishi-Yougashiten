@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React-Shiroishi-Yougashiten/static/css/main.9dc62838.css",
-    "main.js": "/React-Shiroishi-Yougashiten/static/js/main.860343bf.js",
+    "main.css": "/React-Shiroishi-Yougashiten/static/css/main.e966342a.css",
+    "main.js": "/React-Shiroishi-Yougashiten/static/js/main.ee2e0c88.js",
     "static/js/787.7efd31bd.chunk.js": "/React-Shiroishi-Yougashiten/static/js/787.7efd31bd.chunk.js",
     "static/media/first_ground.png": "/React-Shiroishi-Yougashiten/static/media/first_ground.1f50d87641309dd902e2.png",
     "static/media/about_gallery_item_1.png": "/React-Shiroishi-Yougashiten/static/media/about_gallery_item_1.ea43e3874543124465c9.png",
@@ -15,6 +15,7 @@
     "static/media/about_gallery_title2.png": "/React-Shiroishi-Yougashiten/static/media/about_gallery_title2.80fba1ddc650a4fb14a9.png",
     "static/media/first_cloud_2.png": "/React-Shiroishi-Yougashiten/static/media/first_cloud_2.5fd40832d2f0ce2e593c.png",
     "static/media/noise.jpg": "/React-Shiroishi-Yougashiten/static/media/noise.ba48fce9b19e0adf09f2.jpg",
+    "static/media/loading_logo.svg": "/React-Shiroishi-Yougashiten/static/media/loading_logo.415a7db5735f6cfd9c4ffbe5de43e8e0.svg",
     "static/media/first_cloud_4.png": "/React-Shiroishi-Yougashiten/static/media/first_cloud_4.522517c3563a007ff4d7.png",
     "static/media/first_cloud_3.png": "/React-Shiroishi-Yougashiten/static/media/first_cloud_3.87403ad46315e3eda97a.png",
     "static/media/first_title.svg": "/React-Shiroishi-Yougashiten/static/media/first_title.6976773e8ccde432f1da0300f13567f7.svg",
@@ -22,12 +23,12 @@
     "static/media/first_cloud_1.png": "/React-Shiroishi-Yougashiten/static/media/first_cloud_1.c86f7d23d3dfa7963c0b.png",
     "static/media/about_gallery_title.svg": "/React-Shiroishi-Yougashiten/static/media/about_gallery_title.7b745a965fd414431edd4548c4a5dbd6.svg",
     "index.html": "/React-Shiroishi-Yougashiten/index.html",
-    "main.9dc62838.css.map": "/React-Shiroishi-Yougashiten/static/css/main.9dc62838.css.map",
-    "main.860343bf.js.map": "/React-Shiroishi-Yougashiten/static/js/main.860343bf.js.map",
+    "main.e966342a.css.map": "/React-Shiroishi-Yougashiten/static/css/main.e966342a.css.map",
+    "main.ee2e0c88.js.map": "/React-Shiroishi-Yougashiten/static/js/main.ee2e0c88.js.map",
     "787.7efd31bd.chunk.js.map": "/React-Shiroishi-Yougashiten/static/js/787.7efd31bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9dc62838.css",
-    "static/js/main.860343bf.js"
+    "static/css/main.e966342a.css",
+    "static/js/main.ee2e0c88.js"
   ]
 }
