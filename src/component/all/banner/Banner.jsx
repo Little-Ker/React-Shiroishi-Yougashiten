@@ -71,6 +71,8 @@ function Banner() {
   }]
 
   useEffect(() => {
+    document.querySelector('body').style.overflow = 'hidden'
+
     TweenMax.staggerTo(['#leftTree', '#rightTree', '#bannerTitle', '#store'], 0,
       {
         duration: 0,
@@ -96,6 +98,9 @@ function Banner() {
       filter: 'blur(0px)',
       opacity: 1,
       delay: 1,
+      onComplete: () => {
+        document.querySelector('body').style.overflow = 'auto'
+      },
     })
   }, [])
 
