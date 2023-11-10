@@ -1,6 +1,7 @@
 import React, {
   useCallback, useEffect, useRef
 } from 'react'
+import styles from './aboutMoveText.module.sass'
 
 function AboutMoveText() {
   const posY = useRef(0)
@@ -20,12 +21,9 @@ function AboutMoveText() {
   }, [handleNavigation])
 
   return (
-    <svg viewBox="0 0 1920 452.7">
+    <svg viewBox="0 0 1920 452.7" className={styles.aboutMoveText}>
       <path d="m3.35,447.73c116-78,425-266,679-236,357.53,42.23,418,91,595,115,302.59,41.03,726-222,806-323" stroke="none" fill="none" id="stroke"></path>
-      <text style={{
-        fill: '#fff',
-        fontSize: '64px',
-      }}>
+      <text className={styles.text}>
         <textPath href="#stroke" id="strokeOnPath" startOffset={ -(posY.current) }>
           ABOUT IMMERSIVE PATISSERIE	&nbsp;	&nbsp;	&nbsp;
           ABOUT IMMERSIVE PATISSERIE	&nbsp;	&nbsp;	&nbsp;

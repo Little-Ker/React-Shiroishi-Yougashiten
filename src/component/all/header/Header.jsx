@@ -1,6 +1,5 @@
 import React, {
-  useEffect, useCallback,
-  useState
+  useEffect, useCallback, useState
 } from 'react'
 import clsx from 'clsx'
 import Logo from 'component/svg/logo'

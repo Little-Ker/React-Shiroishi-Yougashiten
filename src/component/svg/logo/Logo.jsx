@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styles from './logo.module.sass'
 
 function Logo(props) {
-  const { color } = props
+  const { color, style } = props
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="164.275" height="55.647" viewBox="0 0 164.275 55.647">
+    <svg className={styles.logo} style={style} xmlns="http://www.w3.org/2000/svg" width="164.275" height="55.647" viewBox="0 0 164.275 55.647">
       <defs>
         <clipPath id="clip-path">
           <rect width="164.275" height="55.647" fill="none"></rect>
@@ -48,10 +49,12 @@ function Logo(props) {
 
 Logo.propTypes = {
   color: PropTypes.string,
+  style: PropTypes.object,
 }
 
 Logo.defaultProps = {
   color: '#002c83',
+  style: {},
 }
 
 export default Logo

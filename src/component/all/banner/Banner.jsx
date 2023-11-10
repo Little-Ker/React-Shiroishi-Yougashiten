@@ -1,5 +1,5 @@
 import React, {
-  useEffect, useState
+  useEffect, useState, useRef, useCallback
 } from 'react'
 import {
   MouseParallax 
@@ -29,8 +29,28 @@ import leftFrontTree from 'assets/image/mainView/banner/first_tree_front_left.pn
 import rightFrontTree from 'assets/image/mainView/banner/first_tree_front_right.png'
 
 function Banner() {
+  const isMounted = useRef(false)
   const [isShowBanner, setIsShowBanner] = useState(true)
   const isShow = useSelector(state => state.showBanner.isShow)
+  
+  const handleNavigation = useCallback(
+    (e) => {
+      const scrollWindow = document.documentElement
+      const scrollTop = scrollWindow.scrollTop
+
+      if (!isMounted.current && (scrollTop < 400))  {
+        document.querySelector('body').style.overflow = 'hidden'
+      }
+      isMounted.current = true
+    }, []
+  )
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleNavigation)
+    return () => {
+      window.removeEventListener('scroll', handleNavigation)
+    }
+  }, [handleNavigation])
 
   useEffect(() => {
     setIsShowBanner(isShow)
@@ -38,68 +58,54 @@ function Banner() {
 
   const clouds = [{
     img: cloud1,
-    pos: {
-      left: '30%',
-      top: '-5%',
+    style: {
       backgroundImage: `url(${bg})`,
     },
     strength: 0.08,
   }, {
     img: cloud2,
-    pos: {
-      right: '12%',
-      top: '-3%',
+    style: {
       backgroundImage: `url(${bg})`,
     },
     strength: 0.08,
   }, {
     img: cloud3,
-    pos: {
-      left: '20%',
-      top: '20%',
+    style: {
       backgroundImage: `url(${bg})`,
     },
     strength: 0.12,
   }, {
     img: cloud4,
-    pos: {
-      right: '20%',
-      top: '25%',
+    style: {
       backgroundImage: `url(${bg})`,
     },
     strength: 0.12,
   }]
 
   useEffect(() => {
-    document.querySelector('body').style.overflow = 'hidden'
-
     TweenMax.staggerTo(['#leftTree', '#rightTree', '#bannerTitle', '#store'], 0,
       {
         duration: 0,
-        filter: 'blur(5px)',
         opacity: 0,
-      }) 
+      })
   
     let tl = gsap.timeline()
     tl.to('#leftTree',{
+      delay: 1.6,
       duration: 1,
-      filter: 'blur(0px)',
       opacity: 1,
     }).to('#rightTree',{
       duration: 1,
-      filter: 'blur(0px)',
       opacity: 1,
     }).to('#store',{
       duration: 1,
-      filter: 'blur(0px)',
       opacity: 1,
     }).to('#bannerTitle',{
       duration: 2,
-      filter: 'blur(0px)',
       opacity: 1,
-      delay: 1,
       onComplete: () => {
         document.querySelector('body').style.overflow = 'auto'
+        isMounted.current = true
       },
     })
   }, [])
@@ -107,9 +113,9 @@ function Banner() {
   return (
     <div className={clsx(styles.banner, !isShowBanner && styles.showNone)} style={{backgroundImage: `url(${bg})`} }>
       <div className={styles.clouds}>
-        {clouds.map(cur => (
+        {clouds.map((cur, index) => (
           <MouseParallax key={cur.img} enableOnTouchDevice isAbsolutelyPositioned lerpEase={0.01} strength={cur.strength}>
-            <div className={styles.cloudBg} style={cur.pos}>
+            <div className={clsx(styles.cloudBg, styles[`cloud${index+1}`])} style={cur.style}>
               <img className={styles.cloud} src={cur.img} alt="" />
             </div>
           </MouseParallax >

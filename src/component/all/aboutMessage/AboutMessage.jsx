@@ -20,19 +20,12 @@ import title01 from 'assets/image/mainView/about/about_gallery_title.png'
 function AboutMessage() {
   const dispatch = useDispatch()
 
-  const preTextList = useMemo(() => [{
-    text: 'ひとくち、',
-    marginLeft: '10rem',
-  }, {
-    text: 'ふたくち、',
-    marginLeft: '13.5rem',
-  }, {
-    text: '夢うつつ',
-    marginLeft: '20rem',
-  }, {
-    text: 'ここは',
-    marginLeft: '20rem',
-  }], [])
+  const preTextList = useMemo(() => [
+    'ひとくち、',
+    'ふたくち、', 
+    '夢うつつ',
+    'ここは',
+  ], [])
 
   const sentenceList = useMemo(() => [{
     text: '「架空のパティスリーしろいし洋菓子店」は、',
@@ -72,9 +65,9 @@ function AboutMessage() {
             offset={-400}        
           >
             <Timeline paused>
-              {preTextList.map((cur) => {
+              {preTextList.map((cur, index) => {
                 return (
-                  <div key={cur.text} style={{marginLeft: cur.marginLeft}}>
+                  <div key={cur} className={styles[`text${index}`]}>
                     <Tween
                       from={{
                         opacity: 0,
@@ -83,10 +76,10 @@ function AboutMessage() {
                       }}
                       stagger={0.15}
                     >
-                      <SplitChars 
+                      <SplitChars
                         wrapper={<div className={styles.splitLetters} />}
                       >
-                        {cur.text}
+                        {cur}
                       </SplitChars >
                     </Tween>
                   </div>)
@@ -139,8 +132,8 @@ function AboutMessage() {
             </Timeline>
           </Scene>
         </Controller>
-        <div id={'triggerMovie'} style={{ marginTop: '50rem' }} />
-        <div id={'triggerMovie2'} style={{ marginTop: '100rem' }} />
+        <div id={'triggerMovie'} className={styles.triggerMovie} />
+        <div id={'triggerMovie2'} className={styles.triggerMovie2} />
       </div>
       <div className={styles.right}>
         <Tween

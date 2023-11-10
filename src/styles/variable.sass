@@ -10,6 +10,10 @@ $light-blue-color: #E8F1F4
 $brown-color: #968575
 
 // 裝置大小
+$extraExtraLarge-size: 1400px
+$extraLarge-size: 1200px
+$large-size: 992px
+$medium-size: 768px
 $mobile-size: 576px
 $s-mobile-size: 375px
 
@@ -17,6 +21,23 @@ $s-mobile-size: 375px
   display: flex
   justify-content: $horizontal
   align-items: $vertical
+
+// RWD
+= extraExtraLarge
+  @media only screen and (max-width: $extraExtraLarge-size)
+    @content
+
+= extraLarge
+  @media only screen and (max-width: $extraLarge-size)
+    @content
+
+= large
+  @media only screen and (max-width: $large-size)
+    @content
+
+= medium
+  @media only screen and (max-width: $medium-size)
+    @content
 
 = mobile
   @media only screen and (max-width: $mobile-size)

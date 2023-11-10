@@ -24,6 +24,9 @@ function About() {
     setTrigger(triggerRef.current)
   }, [])
 
+  let wh = window.innerHeight
+  let ww = window.innerWidth
+
   return (
     <Tween
       duration={0.6}
@@ -48,8 +51,8 @@ function About() {
                 <Tween
                   to={{
                     webkitMaskPositionY: 0,
-                    webkitMaskSize: '250vw',
-                    backgroundSize: '100%',
+                    webkitMaskSize: '400vh',
+                    backgroundSize: `${160000000 / (wh * ww)}%`,
                   }}
                 >
                   <div className={clsx(styles.aboutBg, styles.mask)} style={{
@@ -58,7 +61,7 @@ function About() {
                   }}>
                     <Timeline
                       target={
-                        <div className={clsx(styles.aboutMoveText)}>
+                        <div className={styles.aboutMoveText}>
                           <AboutMoveText />
                         </div>
                       }
@@ -94,7 +97,8 @@ function About() {
                 totalProgress={progress}
                 paused
               >
-                <img className={styles.hand} src={hand} alt="" />
+                {/* <img className={styles.hand} src={hand} alt="" /> */}
+                <></>
               </Tween>    
             )}
           </Scene>

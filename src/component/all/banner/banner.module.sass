@@ -1,3 +1,4 @@
+@use '../../../styles/variable' as v
 @use '../../../styles/main' as main
 
 .banner
@@ -6,6 +7,7 @@
   background-repeat: repeat
   background-size: 20rem
   position: fixed
+  transform: translateZ(0)
   top: 0
   left: 0
   overflow: hidden
@@ -14,55 +16,124 @@
     display: none
   .clouds
     .cloudBg
-      background-size: 20rem
-      position: relative
+      background-size: 20vw
       position: absolute
     .cloud
       width: 100%
       mix-blend-mode: screen
+    .cloud1
+      left: 20vw
+      top: -5vh
+      +v.extraExtraLarge
+        left: 10vw
+      +v.extraLarge
+        left: 3vw
+      +v.large
+        left: -10vw
+      +v.medium
+        left: -30vw
+      +v.mobile
+        display: none
+    .cloud2
+      right: 12vw
+      top: -3vh
+      +v.large
+        right: 1vw
+    .cloud3
+      left: 20vw
+      top: 20vh
+      +v.extraLarge
+        left: 13vw
+      +v.large
+        left: 0vw
+      +v.mobile
+        width: 50%
+    .cloud4
+      right: 20vw
+      top: 25vh
+      +v.extraExtraLarge
+        right: 3vw
+      +v.medium
+        width: 50%
+        right: -20vw
+      +v.mobile
+        right: -10vw
   .title
-    padding-top: 5%
+    padding-top: 15vh
     position: relative
+    width: 30vw
+    left: 50%
+    transform: translateX(-50%)
+    +v.large
+      padding-top: 15vh
+    +v.medium
+      width: 50vw
+    img
+      width: 100%
   .ground
     position: absolute
     bottom: 0
     left: 0
     height: 120px
     width: 100%
+    +v.medium
+      height: 18vh
   .building
     position: absolute
     bottom: 6%
     left: 0
     right: 0
-    margin-left: 3%
-    .store, .leftTree, .rightTree
-      // position: absolute
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    +v.medium
+      bottom: 12%
+      margin-left: 10vw
     .store
       width: 300px
-      // margin: auto
+      width: 32vh
     .rightTree
       width: 360px
-
+      width: 32vh
+      +v.mobile
+        margin-left: -5%
     .leftTree
       width: 220px
-      margin-right: 5rem
-      filter: blur(5px)
+      width: 25vh
+      margin-right: 5vw
+      +v.mobile
+        margin-right: -3%
   .carMove
     width: 100%
     position: absolute
-    bottom: 1%
-    animation: carMove 10s linear infinite
+    bottom: 1vh
+    transform: translateX(100%)
+    animation: carMove 10s 1.6s linear infinite
+    +v.medium
+      bottom: 10vh
     .car
       width: 320px
       animation: shake .15s linear infinite
+      +v.medium
+        width: 220px
   .leftFrontTree, .rightFrontTree
     position: absolute
   .leftFrontTree
     left: 0
     bottom: -30%
+    width: 60vw
+    +v.large
+      bottom: -15%
+    +v.mobile
+      bottom: 0%
   .rightFrontTree
     right: -10%
     bottom: -30%
+    width: 45vw
+    +v.large
+      bottom: -15%
+    +v.mobile
+      bottom: 0%
 
 @keyframes shake
   0%, 100%

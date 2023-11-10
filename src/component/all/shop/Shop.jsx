@@ -22,12 +22,15 @@ function Shop() {
     setIsShowBanner(isShow)
   }, [isShow])
 
+  let wh = window.innerHeight
+  let ww = window.innerWidth
+
   return (
     <div className={clsx(styles.shop,(!isShowBanner && styles.showShop) )}>
       <Tween
         duration={1}
         to={{
-          backgroundSize: '25%',
+          backgroundSize: `${(ww > 500) ? 25 : 60}%`,
           scrollTrigger: {
             trigger: '#triggerMovie2',
             start: '-200px center',
@@ -38,6 +41,7 @@ function Shop() {
       >
         <div className={styles.shopBg} style={{
           backgroundImage: `url(${shopBg})`,
+          backgroundSize: `${160000000 / (wh * ww)}%`,
         }}>
           <Tween
             duration={0.6}

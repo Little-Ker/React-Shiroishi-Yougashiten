@@ -1,4 +1,3 @@
-
 @use '../../../styles/variable' as v
 
 .header
@@ -7,9 +6,15 @@
   align-items: center
   padding: 3.5rem 5vw
   position: fixed
+  transform: translateZ(0)
   z-index: 999
   top: 0
+  left: 0
   width: 100%
+  +v.extraExtraLarge
+    padding: 5vh 3vw
+  +v.mobile
+    padding: 3vh 4vw 3vh 1vw
   .button
     width: 320px
     height: 55px
@@ -23,6 +28,12 @@
     overflow: hidden
     transition: .3s all
     position: relative
+    +v.extraExtraLarge
+      width: 240px
+      height: 45px
+      font-size: 10px
+    +v.mobile
+      width: 200px
     .textList
       width: 100%
       position: absolute

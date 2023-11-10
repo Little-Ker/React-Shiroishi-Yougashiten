@@ -1,3 +1,4 @@
+@use '../../../styles/variable' as v
 @use '../../../styles/main' as main
 
 .about
@@ -9,7 +10,11 @@
     background-size: 120%
     background-position: center
     background-attachment: fixed
+    // position: absolute
     position: fixed
+    transform: translateZ(0)
+    top: 0
+    left: 0
     z-index: 1
     &.mask
       -webkit-mask-position-x: center
@@ -26,6 +31,7 @@
       background: rgba(#000, 0.4)
   .hand
     position: fixed
+    transform: translateZ(0)
     z-index: 2
     right: -15.5vw
     top: -130vh
@@ -35,6 +41,9 @@
   .aboutMoveText
     margin-top: 250px
     position: fixed
+    transform: translateZ(0)
+    top: 0
+    left: 0
     width: 100%
     z-index: 2
   .text

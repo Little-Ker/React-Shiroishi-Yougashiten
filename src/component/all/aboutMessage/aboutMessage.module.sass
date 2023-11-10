@@ -1,4 +1,5 @@
 @use '../../../styles/main' as main
+@use '../../../styles/variable' as v
 
 .aboutMessage
   display: flex
@@ -10,34 +11,110 @@
   width: 100%
   padding: 0 4.5rem
   padding-top: 1500px
+  +v.medium
+    flex-direction: column-reverse
+    padding: 0 2rem
+    padding-top: 1500px
+  +v.mobile
+    padding: 0 1rem
+    padding-top: 1500px
   .left
     width: 55vw
     padding: 0 4.5rem
     text-align: left
     min-height: 5000px
+    @for $i from 0 through 3
+      .text#{$i}
+        @if ($i == 3)
+          margin-left: calc(2 * 5rem + 10rem)
+        @else
+          margin-left: calc(#{$i} * 5rem + 10rem)
+    +v.extraLarge
+      padding: 0 0.5rem
+      @for $i from 0 through 3
+        .text#{$i}
+          @if ($i == 3)
+            margin-left: calc(2 * 5rem + 5rem)
+          @else
+            margin-left: calc(#{$i} * 5rem + 5rem)
+    +v.medium
+      padding: 0 0.5rem
+      width: 100%
+      @for $i from 0 through 3
+        .text#{$i}
+          @if ($i == 3)
+            margin-left: calc(2 * 5rem + 0rem)
+          @else
+            margin-left: calc(#{$i} * 5rem + 0rem)
+    .text0
+      +v.medium
+        margin-top: 10rem
+      +v.mobile
+        margin-top: 5rem
     .title01
-      width: 450px
+      max-width: 450px
+      width: 25vw
       margin-left: 9rem
+      +v.extraLarge
+        margin-left: 8rem
+      +v.medium
+        width: 50vw
+        margin-left: 0
+        position: relative
+        left: 15%
     .splitLetters
       margin-bottom: 3rem
       display: inline-block
       font-size: 36px
       transform-origin: bottom center
+      +v.extraLarge
+        font-size: 24px
+        margin-bottom: 1rem
+      +v.medium
+        font-size: 36px
+        margin-bottom: 3rem
+      +v.mobile
+        font-size: 24px
+        margin-bottom: 1rem
     .sentence
       font-size: 24px
       margin-left: 9rem
       transform-origin: center left
+      +v.extraLarge
+        font-size: 16px
+        margin-left: 5rem
+      +v.medium
+        font-size: 20px
+        margin-left: 0
+      +v.mobile
+        font-size: 16px
+    .triggerMovie
+      margin-top: 50rem
+      +v.medium
+        margin-top: 10rem
+    .triggerMovie2
+      margin-top: 100rem
+      +v.medium
+        margin-top: 50rem
   .right
     position: relative
+    +v.medium
+      align-self: center
   .movie
     position: sticky
     top: 18%
     height: 385px
-    width: 225px
     width: 20vw
     height: calc(20vw * 485 / 274)
     border-radius: 10px
     overflow: hidden
+    +v.extraLarge
+      top: 35%
+    +v.medium
+      width: 80vw
+      height: calc(80vw * 485 / 274)
+
     iframe
       width: 100%
       height: 100%
+      align-self: center
